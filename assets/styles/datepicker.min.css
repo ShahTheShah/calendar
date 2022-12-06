@@ -1,0 +1,266 @@
+.datepicker {
+  position: relative;
+  font-size: 18px;
+  color: #6e6c68;
+  width: 500px;
+}
+
+.datepicker-views {
+  padding: 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #f4f4f4;
+}
+
+.datepicker_error {
+  position: relative;
+  display: block;
+  width: 100%;
+  color: red;
+  font-size: 12px;
+}
+
+.datepicker-group {
+  flex: calc(50% - 20px);
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #e7e2c2;
+}
+
+.datepicker-group.datepicker-group--active,
+.datepicker-group:hover {
+  background-color: #fff;
+}
+
+.datepicker_label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.datepicker_input {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  color: inherit;
+}
+
+.datepicker_input__wrapper {
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.datepicker_input__wrapper.datepicker_input__wrapper--active {
+  background-color: #f9f2d9;
+}
+
+.datepicker_delete {
+  visibility: hidden;
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: #f9f2d9;
+  border-radius: 5px;
+}
+
+.datepicker_delete.datepicker_delete--show {
+  visibility: visible;
+}
+
+.datepicker_delete:before,
+.datepicker_delete::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.5px);
+  left: 20%;
+  width: 60%;
+  height: 1px;
+  background-color: #f2c085;
+  transform-origin: center;
+}
+
+.datepicker_delete::before {
+  transform: rotate(45deg);
+}
+
+.datepicker_delete::after {
+  transform: rotate(-45deg);
+}
+
+.datepicker_delete:hover {
+  cursor: pointer;
+  background-color: #fede31;
+}
+
+.datepicker-controls {
+  display: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 40px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fffef4;
+  width: 150%;
+}
+
+.datepicker-controls.datepicker-controls--show {
+  display: flex;
+}
+
+.datepicker-controls_apply {
+  position: relative;
+  padding: 10px 0;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  background-color: #f00;
+  border-radius: 5px;
+}
+
+.datepicker-controls_apply::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.datepicker-controls_apply:hover {
+  cursor: pointer;
+}
+
+.datepicker-controls_apply:hover::after {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.calendar {
+  flex: calc(50% - 10px);
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px solid #dacf9d;
+  border-radius: 5px;
+}
+
+.calendar-head {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.calendar_day--active {
+  background-color: #fede31;
+}
+
+.calendar-year,
+.calendar-month {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.calendar-year__wrapper,
+.calendar-month__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #dacf9d;
+}
+
+.calendar-year-list,
+.calendar-month-list {
+  display: none;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 50%;
+  grid-template-columns: repeat(4, 1fr);
+  transform: translateX(-50%);
+  background-color: #f9f2d9;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.calendar-year-list.calendar-list--show,
+.calendar-month-list.calendar-list--show {
+  display: grid;
+}
+
+.calendar-year-list li,
+.calendar-month-list li {
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.calendar-year-list li:hover,
+.calendar-month-list li:hover {
+  cursor: pointer;
+  background-color: rgba(207, 207, 207, 0.5);
+}
+
+.calendar-month-list {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.calendar-daysNames,
+.calendar-days tr {
+  display: flex;
+}
+
+.calendar-daysNames td,
+.calendar-days tr td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14.2857142857%;
+  aspect-ratio: 1/1;
+}
+
+.calendar-days td {
+  position: relative;
+  border: 1px solid #dacf9d;
+  border-left: none;
+  border-bottom: none;
+}
+
+.calendar-days td:last-child {
+  border-right: none;
+}
+
+.calendar-days td::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.calendar-days td:hover {
+  cursor: pointer;
+}
+
+.calendar-days td:hover::after {
+  background-color: rgba(207, 207, 207, 0.2);
+}
+
+.calendar-days td[data-pos=prev],
+.calendar-days td[data-pos=next] {
+  color: rgba(110, 108, 104, 0.5);
+}
